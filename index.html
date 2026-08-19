@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pavan Educator - Learn Today, Lead Tomorrow</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #ffffff;
+      color: #10203d;
+    }
+
+    /* NAVBAR */
+
+    header {
+      height: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 6%;
+      background: white;
+      border-bottom: 1px solid #edf1f7;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .brand {
+      font-size: 28px;
+      font-weight: 800;
+      color: #10203d;
+    }
+
+    .brand span {
+      color: #1463e8;
+    }
+
+    nav {
+      display: flex;
+      gap: 35px;
+      align-items: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #10203d;
+      font-size: 16px;
+      padding: 34px 0;
+      position: relative;
+    }
+
+    nav a:hover {
+      color: #1463e8;
+    }
+
+    nav a.active {
+      color: #1463e8;
+    }
+
+    nav a.active::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 3px;
+      background: #1463e8;
+    }
+
+    .get-started {
+      background: #1463e8;
+      color: white !important;
+      padding: 14px 25px !important;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .get-started:hover {
+      background: #0d4fc4;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 650px;
+      background: linear-gradient(135deg, #f7faff, #edf5ff);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 70px 6%;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      max-width: 650px;
+    }
+
+    .welcome {
+      display: inline-block;
+      background: #e2edff;
+      color: #1463e8;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-weight: bold;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 {
+      font-size: clamp(48px, 5vw, 76px);
+      line-height: 1.05;
+      margin-bottom: 25px;
+      color: #10203d;
+    }
+
+    .hero h1 span {
+      color: #1463e8;
+    }
+
+    .line {
+      width: 80px;
+      height: 4px;
+      background: #1463e8;
+      margin-bottom: 28px;
+    }
+
+    .hero-text {
+      font-size: 19px;
+      line-height: 1.7;
+      color: #465775;
+      max-width: 590px;
+      margin-bottom: 35px;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      margin-bottom: 35px;
+    }
+
+    .feature {
+      border-right: 1px solid #cbd7e8;
+      padding-right: 15px;
+    }
+
+    .feature:last-child {
+      border-right: none;
+    }
+
+    .feature-icon {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .feature h3 {
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    .feature p {
+      font-size: 13px;
+      line-height: 1.5;
+      color: #61708a;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 18px;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+      padding: 15px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+    }
+
+    .primary-btn {
+      background: #1463e8;
+      color: white;
+    }
+
+    .primary-btn:hover {
+      background: #0d4fc4;
+    }
+
+    .secondary-btn {
+      border: 2px solid #1463e8;
+      color: #1463e8;
+      background: white;
+    }
+
+    .secondary-btn:hover {
+      background: #edf5ff;
+    }
+
+    /* HERO IMAGE AREA */
+
+    .hero-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      min-height: 500px;
+    }
+
+    .photo-circle {
+      width: 480px;
+      height: 480px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #4d91f7, #b8d5ff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 25px 60px rgba(20, 99, 232, 0.2);
+    }
+
+    .photo-placeholder {
+      width: 390px;
+      height: 390px;
+      border-radius: 50%;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #1463e8;
+      font-size: 20px;
+      font-weight: bold;
+      padding: 40px;
+    }
+
+    /* STATS */
+
+    .stats {
+      width: 88%;
+      margin: -55px auto 60px;
+      background: white;
+      border-radius: 25px;
+      box-shadow: 0 15px 45px rgba(16, 32, 61, 0.12);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      padding: 35px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .stat {
+      text-align: center;
+      border-right: 1px solid #dce3ed;
+    }
+
+    .stat:last-child {
+      border-right: none;
+    }
+
+    .stat-number {
+      font-size: 38px;
+      font-weight: 800;
+      color: #1463e8;
+    }
+
+    .stat h3 {
+      margin: 5px 0;
+      font-size: 18px;
+    }
+
+    .stat p {
+      color: #71809a;
+      font-size: 14px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 1000px) {
+
+      nav {
+        display: none;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-content {
+        margin: auto;
+      }
+
+      .line {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-text {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .features {
+        grid-template-columns: repeat(2, 1fr);
+        text-align: left;
+      }
+
+      .hero-image {
+        margin-top: 40px;
+      }
+
+      .stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+      }
+
+      .stat {
+        border-right: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      header {
+        height: 75px;
+      }
+
+      .brand {
+        font-size: 22px;
+      }
+
+      .hero {
+        padding: 50px 6%;
+      }
+
+      .hero h1 {
+        font-size: 45px;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      .feature {
+        border-right: none;
+        border-bottom: 1px solid #dce3ed;
+        padding-bottom: 15px;
+      }
+
+      .buttons {
+        flex-direction: column;
+      }
+
+      .primary-btn,
+      .secondary-btn {
+        text-align: center;
+      }
+
+      .photo-circle {
+        width: 300px;
+        height: 300px;
+      }
+
+      .photo-placeholder {
+        width: 240px;
+        height: 240px;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <header>
+
+    <div class="brand">
+      Pavan<span>Educator</span>
+    </div>
+
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="#">Courses</a>
+      <a href="#">Tutorials</a>
+      <a href="projects.html">Projects</a>
+      <a href="#">Blog</a>
+      <a href="#">About Me</a>
+      <a href="#">Contact</a>
+      <a href="login.html" class="get-started">🎓 Get Started</a>
+    </nav>
+
+  </header>
+
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <div class="welcome">
+        Welcome to Pavan Educator
+      </div>
+
+      <h1>
+        Learn Today,<br>
+        <span>Lead Tomorrow.</span>
+      </h1>
+
+      <div class="line"></div>
+
+      <p class="hero-text">
+        Quality content, practical knowledge and real-world skills
+        to help you succeed in Computer Science and beyond.
+      </p>
+
+
+      <div class="features">
+
+        <div class="feature">
+          <div class="feature-icon">📖</div>
+          <h3>Study Notes</h3>
+          <p>Well structured and easy to learn.</p>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">💻</div>
+          <h3>Coding Practice</h3>
+          <p>Practice coding and improve your skills.</p>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">📁</div>
+          <h3>Projects</h3>
+          <p>Real-world projects to build your portfolio.</p>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">🎓</div>
+          <h3>Career Guidance</h3>
+          <p>Guidance for a successful career.</p>
+        </div>
+
+      </div>
+
+
+      <div class="buttons">
+        <a href="#" class="primary-btn">🎓 Explore Courses</a>
+        <a href="#" class="secondary-btn">👤 About Me</a>
+      </div>
+
+    </div>
+
+
+    <!-- PHOTO AREA -->
+
+    <div class="hero-image">
+
+      <div class="photo-circle">
+
+        <div class="photo-placeholder">
+          Your Photo<br>
+          Will Go Here
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- STATS -->
+
+  <section class="stats">
+
+    <div class="stat">
+      <div class="stat-number">1K+</div>
+      <h3>Students</h3>
+      <p>Learning and growing</p>
+    </div>
+
+    <div class="stat">
+      <div class="stat-number">150+</div>
+      <h3>Videos</h3>
+      <p>Easy video tutorials</p>
+    </div>
+
+    <div class="stat">
+      <div class="stat-number">500+</div>
+      <h3>Study Materials</h3>
+      <p>Notes, PDFs & more</p>
+    </div>
+
+    <div class="stat">
+      <div class="stat-number">50+</div>
+      <h3>Projects</h3>
+      <p>Build your portfolio</p>
+    </div>
+
+  </section>
+
+</body>
+</html>
