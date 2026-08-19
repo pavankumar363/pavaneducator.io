@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pavan Educator - About Me</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f5f9ff;
+      color: #10203d;
+    }
+
+    header {
+      height: 85px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 6%;
+      background: white;
+      border-bottom: 1px solid #e5edf8;
+    }
+
+    .brand {
+      font-size: 28px;
+      font-weight: 800;
+    }
+
+    .brand span {
+      color: #1463e8;
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #10203d;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #1463e8;
+    }
+
+    .login-btn {
+      background: #1463e8;
+      color: white !important;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .container {
+      width: 88%;
+      max-width: 1100px;
+      margin: auto;
+      padding: 65px 0;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: 350px 1fr;
+      gap: 60px;
+      align-items: center;
+      background: white;
+      padding: 45px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(16, 32, 61, 0.08);
+    }
+
+    .photo {
+      width: 300px;
+      height: 360px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #dceaff, #eef5ff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #1463e8;
+      font-weight: bold;
+      text-align: center;
+      margin: auto;
+    }
+
+    .content h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+
+    .content h1 span {
+      color: #1463e8;
+    }
+
+    .line {
+      width: 70px;
+      height: 4px;
+      background: #1463e8;
+      margin: 20px 0;
+    }
+
+    .content h2 {
+      margin-bottom: 15px;
+    }
+
+    .content p {
+      color: #66758f;
+      line-height: 1.8;
+      margin-bottom: 18px;
+    }
+
+    .values {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .value {
+      background: #f5f9ff;
+      padding: 20px;
+      border-radius: 12px;
+    }
+
+    .value h3 {
+      color: #1463e8;
+      margin-bottom: 8px;
+    }
+
+    .value p {
+      font-size: 14px;
+      margin: 0;
+    }
+
+    @media (max-width: 900px) {
+      nav {
+        display: none;
+      }
+
+      .about {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .line {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .values {
+        grid-template-columns: 1fr;
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+
+  <div class="brand">
+    Pavan<span>Educator</span>
+  </div>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="courses.html">Courses</a>
+    <a href="tutorials.html">Tutorials</a>
+    <a href="projects.html">Projects</a>
+    <a href="blog.html">Blog</a>
+    <a href="about.html" class="active">About Me</a>
+    <a href="#">Contact</a>
+    <a href="login.html" class="login-btn">🎓 Get Started</a>
+  </nav>
+
+</header>
+
+<main class="container">
+
+  <section class="about">
+
+    <div class="photo">
+      Your Photo<br>
+      Will Go Here
+    </div>
+
+    <div class="content">
+
+      <h1>About <span>Me</span></h1>
+
+      <div class="line"></div>
+
+      <h2>Welcome to Pavan Educator</h2>
+
+      <p>
+        I'm passionate about education, technology and helping students
+        develop practical skills for the future.
+      </p>
+
+      <p>
+        Pavan Educator is a learning platform created to make technology
+        education simple, practical and accessible.
+      </p>
+
+      <div class="values">
+
+        <div class="value">
+          <h3>🎓 Learn</h3>
+          <p>Build strong knowledge through simple explanations.</p>
+        </div>
+
+        <div class="value">
+          <h3>💡 Practice</h3>
+          <p>Turn knowledge into real-world skills.</p>
+        </div>
+
+        <div class="value">
+          <h3>🚀 Grow</h3>
+          <p>Keep learning and prepare for your future.</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+</body>
+</html>
