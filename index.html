@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pavan Educator - Learn Today, Lead Tomorrow</title>
+
+  <title>PavanEducator - Learn Today, Lead Tomorrow</title>
 
   <style>
     * {
@@ -13,28 +14,32 @@
       font-family: Arial, sans-serif;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       background: #ffffff;
       color: #10203d;
     }
 
-    /* NAVBAR */
+    /* NAVIGATION */
 
     header {
-      height: 90px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      height: 82px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 0 6%;
-      background: white;
-      border-bottom: 1px solid #edf1f7;
-      position: sticky;
-      top: 0;
-      z-index: 100;
+      background: rgba(255,255,255,0.97);
+      border-bottom: 1px solid #e5edf8;
     }
 
     .brand {
-      font-size: 28px;
+      font-size: 27px;
       font-weight: 800;
       color: #10203d;
     }
@@ -45,45 +50,30 @@
 
     nav {
       display: flex;
-      gap: 35px;
       align-items: center;
+      gap: 27px;
     }
 
     nav a {
-      text-decoration: none;
       color: #10203d;
-      font-size: 16px;
-      padding: 34px 0;
-      position: relative;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 600;
+      transition: 0.2s;
     }
 
     nav a:hover {
       color: #1463e8;
     }
 
-    nav a.active {
-      color: #1463e8;
-    }
-
-    nav a.active::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      height: 3px;
-      background: #1463e8;
-    }
-
-    .get-started {
+    .login-button {
       background: #1463e8;
       color: white !important;
-      padding: 14px 25px !important;
+      padding: 12px 21px;
       border-radius: 8px;
-      font-weight: bold;
     }
 
-    .get-started:hover {
+    .login-button:hover {
       background: #0d4fc4;
     }
 
@@ -91,12 +81,12 @@
 
     .hero {
       min-height: 650px;
-      background: linear-gradient(135deg, #f7faff, #edf5ff);
+      padding: 75px 6%;
       display: grid;
       grid-template-columns: 1fr 1fr;
+      gap: 60px;
       align-items: center;
-      padding: 70px 6%;
-      overflow: hidden;
+      background: linear-gradient(135deg, #f7fbff, #edf5ff);
     }
 
     .hero-content {
@@ -105,19 +95,18 @@
 
     .welcome {
       display: inline-block;
-      background: #e2edff;
+      padding: 9px 18px;
+      border-radius: 30px;
+      background: #e1edff;
       color: #1463e8;
-      padding: 10px 20px;
-      border-radius: 25px;
-      font-weight: bold;
-      margin-bottom: 25px;
+      font-weight: 700;
+      margin-bottom: 22px;
     }
 
     .hero h1 {
-      font-size: clamp(48px, 5vw, 76px);
+      font-size: clamp(48px, 6vw, 76px);
       line-height: 1.05;
-      margin-bottom: 25px;
-      color: #10203d;
+      margin-bottom: 22px;
     }
 
     .hero h1 span {
@@ -125,165 +114,172 @@
     }
 
     .line {
-      width: 80px;
+      width: 75px;
       height: 4px;
       background: #1463e8;
-      margin-bottom: 28px;
+      margin-bottom: 25px;
     }
 
     .hero-text {
-      font-size: 19px;
+      color: #5e6d84;
+      font-size: 18px;
       line-height: 1.7;
-      color: #465775;
-      max-width: 590px;
-      margin-bottom: 35px;
-    }
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 15px;
-      margin-bottom: 35px;
-    }
-
-    .feature {
-      border-right: 1px solid #cbd7e8;
-      padding-right: 15px;
-    }
-
-    .feature:last-child {
-      border-right: none;
-    }
-
-    .feature-icon {
-      font-size: 30px;
-      margin-bottom: 10px;
-    }
-
-    .feature h3 {
-      font-size: 16px;
-      margin-bottom: 8px;
-    }
-
-    .feature p {
-      font-size: 13px;
-      line-height: 1.5;
-      color: #61708a;
+      max-width: 600px;
+      margin-bottom: 30px;
     }
 
     .buttons {
       display: flex;
-      gap: 18px;
+      gap: 15px;
     }
 
-    .primary-btn,
-    .secondary-btn {
-      padding: 15px 28px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
+    .button {
       display: inline-block;
+      text-decoration: none;
+      padding: 14px 24px;
+      border-radius: 8px;
+      font-weight: 700;
+      transition: 0.2s;
     }
 
-    .primary-btn {
+    .primary {
       background: #1463e8;
       color: white;
     }
 
-    .primary-btn:hover {
+    .primary:hover {
       background: #0d4fc4;
+      transform: translateY(-2px);
     }
 
-    .secondary-btn {
+    .secondary {
+      background: white;
+      color: #1463e8;
       border: 2px solid #1463e8;
-      color: #1463e8;
-      background: white;
     }
 
-    .secondary-btn:hover {
+    .secondary:hover {
       background: #edf5ff;
+      transform: translateY(-2px);
     }
 
-    /* HERO IMAGE AREA */
+    /* HERO IMAGE */
 
-    .hero-image {
+    .hero-photo {
       display: flex;
       justify-content: center;
       align-items: center;
-      position: relative;
-      min-height: 500px;
     }
 
-    .photo-circle {
-      width: 480px;
-      height: 480px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #4d91f7, #b8d5ff);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 25px 60px rgba(20, 99, 232, 0.2);
+    .hero-photo img {
+      width: 100%;
+      max-width: 530px;
+      height: 500px;
+      object-fit: cover;
+      border-radius: 28px;
+      box-shadow: 0 25px 60px rgba(20, 99, 232, 0.18);
     }
 
-    .photo-placeholder {
-      width: 390px;
-      height: 390px;
-      border-radius: 50%;
+    /* FEATURES */
+
+    .features-section {
+      padding: 75px 6%;
       background: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    }
+
+    .section-title {
       text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    .section-title h2 span {
       color: #1463e8;
-      font-size: 20px;
-      font-weight: bold;
-      padding: 40px;
+    }
+
+    .section-title p {
+      color: #68778e;
+      font-size: 17px;
+    }
+
+    .features {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .feature {
+      background: #f7faff;
+      padding: 28px;
+      border-radius: 15px;
+      border: 1px solid #e5edf8;
+      transition: 0.25s;
+    }
+
+    .feature:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 15px 35px rgba(20, 99, 232, 0.1);
+    }
+
+    .feature-icon {
+      font-size: 35px;
+      margin-bottom: 15px;
+    }
+
+    .feature h3 {
+      margin-bottom: 10px;
+    }
+
+    .feature p {
+      color: #68778e;
+      line-height: 1.6;
+      font-size: 14px;
     }
 
     /* STATS */
 
     .stats {
-      width: 88%;
-      margin: -55px auto 60px;
-      background: white;
-      border-radius: 25px;
-      box-shadow: 0 15px 45px rgba(16, 32, 61, 0.12);
+      padding: 55px 6%;
+      background: #1463e8;
+      color: white;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      padding: 35px;
-      position: relative;
-      z-index: 10;
-    }
-
-    .stat {
+      gap: 20px;
       text-align: center;
-      border-right: 1px solid #dce3ed;
-    }
-
-    .stat:last-child {
-      border-right: none;
     }
 
     .stat-number {
       font-size: 38px;
       font-weight: 800;
-      color: #1463e8;
-    }
-
-    .stat h3 {
-      margin: 5px 0;
-      font-size: 18px;
+      margin-bottom: 7px;
     }
 
     .stat p {
-      color: #71809a;
-      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 30px;
+      text-align: center;
+      background: #10203d;
+      color: white;
+    }
+
+    footer span {
+      color: #5d9cff;
     }
 
     /* MOBILE */
 
-    @media (max-width: 1000px) {
-
+    @media (max-width: 950px) {
       nav {
         display: none;
       }
@@ -307,37 +303,20 @@
         margin-right: auto;
       }
 
-      .features {
-        grid-template-columns: repeat(2, 1fr);
-        text-align: left;
+      .buttons {
+        justify-content: center;
       }
 
-      .hero-image {
-        margin-top: 40px;
+      .features {
+        grid-template-columns: repeat(2, 1fr);
       }
 
       .stats {
         grid-template-columns: repeat(2, 1fr);
-        gap: 25px;
-      }
-
-      .stat {
-        border-right: none;
       }
     }
 
     @media (max-width: 600px) {
-
-      header {
-        height: 75px;
-      }
-
-      .brand img {
-  width: 190px;
-  height: auto;
-  display: block;
-}
-
       .hero {
         padding: 50px 6%;
       }
@@ -346,37 +325,20 @@
         font-size: 45px;
       }
 
+      .hero-photo img {
+        height: 350px;
+      }
+
       .features {
         grid-template-columns: 1fr;
       }
 
-      .feature {
-        border-right: none;
-        border-bottom: 1px solid #dce3ed;
-        padding-bottom: 15px;
+      .stats {
+        grid-template-columns: 1fr;
       }
 
       .buttons {
         flex-direction: column;
-      }
-
-      .primary-btn,
-      .secondary-btn {
-        text-align: center;
-      }
-
-      .photo-circle {
-        width: 300px;
-        height: 300px;
-      }
-
-      .photo-placeholder {
-        width: 240px;
-        height: 240px;
-      }
-
-      .stats {
-        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -389,18 +351,17 @@
   <header>
 
     <div class="brand">
-  Pavan<span>Educator</span>
-</div>
+      Pavan<span>Educator</span>
+    </div>
 
     <nav>
-      <a href="index.html" class="active">Home</a>
+      <a href="index.html">Home</a>
       <a href="courses.html">Courses</a>
-      <a href="#">Tutorials</a>
+      <a href="tutorials.html">Tutorials</a>
       <a href="projects.html">Projects</a>
       <a href="blog.html">Blog</a>
-      <a href="#">About Me</a>
-      <a href="#">Contact</a>
-      <a href="login.html" class="get-started">🎓 Get Started</a>
+      <a href="about.html">About Me</a>
+      <a href="login.html" class="login-button">Get Started</a>
     </nav>
 
   </header>
@@ -413,7 +374,7 @@
     <div class="hero-content">
 
       <div class="welcome">
-        Welcome to Pavan Educator
+        Welcome to PavanEducator
       </div>
 
       <h1>
@@ -428,55 +389,80 @@
         to help you succeed in Computer Science and beyond.
       </p>
 
-
-      <div class="features">
-
-        <div class="feature">
-          <div class="feature-icon">📖</div>
-          <h3>Study Notes</h3>
-          <p>Well structured and easy to learn.</p>
-        </div>
-
-        <div class="feature">
-          <div class="feature-icon">💻</div>
-          <h3>Coding Practice</h3>
-          <p>Practice coding and improve your skills.</p>
-        </div>
-
-        <div class="feature">
-          <div class="feature-icon">📁</div>
-          <h3>Projects</h3>
-          <p>Real-world projects to build your portfolio.</p>
-        </div>
-
-        <div class="feature">
-          <div class="feature-icon">🎓</div>
-          <h3>Career Guidance</h3>
-          <p>Guidance for a successful career.</p>
-        </div>
-
-      </div>
-
-
       <div class="buttons">
-        <a href="#" class="primary-btn">🎓 Explore Courses</a>
-        <a href="#" class="secondary-btn">👤 About Me</a>
+        <a href="courses.html" class="button primary">
+          Explore Courses
+        </a>
+
+        <a href="about.html" class="button secondary">
+          About Me
+        </a>
       </div>
 
     </div>
 
 
-    <!-- PHOTO AREA -->
+    <!-- YOUR HOMEPAGE PHOTO -->
 
-    <div class="hero-image">
+    <div class="hero-photo">
 
-      <div class="photo-circle">
+      <img
+        src="ChatGPT%20Image%20Aug%2019,%202026,%2008_37_49%20PM.png"
+        alt="Pavan Educator"
+      >
 
-        <div class="photo-placeholder">
-          Your Photo<br>
-          Will Go Here
-        </div>
+    </div>
 
+  </section>
+
+
+  <!-- FEATURES -->
+
+  <section class="features-section">
+
+    <div class="section-title">
+
+      <h2>Learn. <span>Build. Grow.</span></h2>
+
+      <p>
+        Everything you need to develop your skills.
+      </p>
+
+    </div>
+
+
+    <div class="features">
+
+      <div class="feature">
+        <div class="feature-icon">📖</div>
+        <h3>Study Notes</h3>
+        <p>
+          Easy-to-understand study materials and notes.
+        </p>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">💻</div>
+        <h3>Coding Practice</h3>
+        <p>
+          Improve your programming skills through practice.
+        </p>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">📁</div>
+        <h3>Projects</h3>
+        <p>
+          Explore practical projects and build your portfolio.
+        </p>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">🚀</div>
+        <h3>Career Guidance</h3>
+        <p>
+          Learn useful skills for your future career.
+        </p>
       </div>
 
     </div>
@@ -490,29 +476,32 @@
 
     <div class="stat">
       <div class="stat-number">1K+</div>
-      <h3>Students</h3>
-      <p>Learning and growing</p>
+      <p>Students</p>
     </div>
 
     <div class="stat">
       <div class="stat-number">150+</div>
-      <h3>Videos</h3>
-      <p>Easy video tutorials</p>
+      <p>Videos</p>
     </div>
 
     <div class="stat">
       <div class="stat-number">500+</div>
-      <h3>Study Materials</h3>
-      <p>Notes, PDFs & more</p>
+      <p>Study Materials</p>
     </div>
 
     <div class="stat">
       <div class="stat-number">50+</div>
-      <h3>Projects</h3>
-      <p>Build your portfolio</p>
+      <p>Projects</p>
     </div>
 
   </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+    © 2026 <span>PavanEducator</span>. All rights reserved.
+  </footer>
 
 </body>
 </html>
