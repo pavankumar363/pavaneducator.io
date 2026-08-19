@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pavan Educator - Dashboard</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f2f5f9;
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 240px;
+      height: 100vh;
+      background: #1e3a8a;
+      color: white;
+      padding: 25px 15px;
+    }
+
+    .logo {
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 35px;
+    }
+
+    .menu a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      padding: 14px 15px;
+      margin-bottom: 8px;
+      border-radius: 8px;
+    }
+
+    .menu a:hover,
+    .menu a.active {
+      background: #172554;
+    }
+
+    .main {
+      margin-left: 240px;
+      padding: 35px;
+    }
+
+    .top {
+      margin-bottom: 30px;
+    }
+
+    .top h1 {
+      color: #1e3a8a;
+      margin-bottom: 8px;
+    }
+
+    .top p {
+      color: #666;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    .card h2 {
+      color: #1e3a8a;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #666;
+    }
+
+    @media (max-width: 800px) {
+      .sidebar {
+        width: 190px;
+      }
+
+      .main {
+        margin-left: 190px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <aside class="sidebar">
+
+    <div class="logo">
+      Pavan Educator
+    </div>
+
+    <nav class="menu">
+      <a href="dashboard.html" class="active">🏠 Dashboard</a>
+      <a href="projects.html">📁 My Projects</a>
+      <a href="notifications.html">🔔 Notifications</a>
+      <a href="profile.html">👤 Profile</a>
+      <a href="visitor-login.html">👥 Visitor Login</a>
+      <a href="index.html">🚪 Logout</a>
+    </nav>
+
+  </aside>
+
+  <main class="main">
+
+    <section class="top">
+      <h1>Welcome to Pavan Educator</h1>
+      <p>This is your student dashboard.</p>
+    </section>
+
+    <section class="cards">
+
+      <div class="card">
+        <h2>📁 My Projects</h2>
+        <p>View and manage your projects.</p>
+      </div>
+
+      <div class="card">
+        <h2>🔔 Notifications</h2>
+        <p>Check your latest notifications.</p>
+      </div>
+
+      <div class="card">
+        <h2>👤 Profile</h2>
+        <p>View and manage your profile.</p>
+      </div>
+
+    </section>
+
+  </main>
+
+</body>
+</html>
