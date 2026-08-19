@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pavan Educator - My Projects</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f2f5f9;
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 240px;
+      height: 100vh;
+      background: #1e3a8a;
+      color: white;
+      padding: 25px 15px;
+    }
+
+    .logo {
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 35px;
+    }
+
+    .menu a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      padding: 14px 15px;
+      margin-bottom: 8px;
+      border-radius: 8px;
+    }
+
+    .menu a:hover,
+    .menu a.active {
+      background: #172554;
+    }
+
+    .main {
+      margin-left: 240px;
+      padding: 35px;
+    }
+
+    h1 {
+      color: #1e3a8a;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .project {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    }
+
+    .project h2 {
+      color: #1e3a8a;
+      margin-bottom: 12px;
+    }
+
+    .project p {
+      color: #666;
+      line-height: 1.5;
+    }
+
+    .open-btn {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 10px 16px;
+      background: #1e3a8a;
+      color: white;
+      text-decoration: none;
+      border-radius: 7px;
+    }
+
+    .open-btn:hover {
+      background: #172554;
+    }
+
+    @media (max-width: 900px) {
+      .projects {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+      }
+
+      .main {
+        margin-left: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <aside class="sidebar">
+
+    <div class="logo">
+      Pavan Educator
+    </div>
+
+    <nav class="menu">
+      <a href="dashboard.html">🏠 Dashboard</a>
+      <a href="projects.html" class="active">📁 My Projects</a>
+      <a href="notifications.html">🔔 Notifications</a>
+      <a href="profile.html">👤 Profile</a>
+      <a href="visitor-login.html">👥 Visitor Login</a>
+      <a href="index.html">🚪 Logout</a>
+    </nav>
+
+  </aside>
+
+  <main class="main">
+
+    <h1>My Projects</h1>
+    <p class="subtitle">Here you can view your projects.</p>
+
+    <section class="projects">
+
+      <div class="project">
+        <h2>Project 1</h2>
+        <p>My first educational project.</p>
+        <a href="#" class="open-btn">Open Project</a>
+      </div>
+
+      <div class="project">
+        <h2>Project 2</h2>
+        <p>My second educational project.</p>
+        <a href="#" class="open-btn">Open Project</a>
+      </div>
+
+      <div class="project">
+        <h2>Project 3</h2>
+        <p>My third educational project.</p>
+        <a href="#" class="open-btn">Open Project</a>
+      </div>
+
+    </section>
+
+  </main>
+
+</body>
+</html>
