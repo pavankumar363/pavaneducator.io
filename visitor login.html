@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pavan Educator - Visitor Login</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f2f5f9;
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 240px;
+      height: 100vh;
+      background: #1e3a8a;
+      color: white;
+      padding: 25px 15px;
+    }
+
+    .logo {
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 35px;
+    }
+
+    .menu a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      padding: 14px 15px;
+      margin-bottom: 8px;
+      border-radius: 8px;
+    }
+
+    .menu a:hover,
+    .menu a.active {
+      background: #172554;
+    }
+
+    .main {
+      margin-left: 240px;
+      padding: 35px;
+    }
+
+    h1 {
+      color: #1e3a8a;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    .visitor-box {
+      max-width: 500px;
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 7px;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 18px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background: #1e3a8a;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #172554;
+    }
+
+    #message {
+      display: none;
+      margin-top: 15px;
+      text-align: center;
+      color: #16a34a;
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+      }
+
+      .main {
+        margin-left: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <aside class="sidebar">
+
+    <div class="logo">
+      Pavan Educator
+    </div>
+
+    <nav class="menu">
+      <a href="dashboard.html">🏠 Dashboard</a>
+      <a href="projects.html">📁 My Projects</a>
+      <a href="notifications.html">🔔 Notifications</a>
+      <a href="profile.html">👤 Profile</a>
+      <a href="visitor-login.html" class="active">👥 Visitor Login</a>
+      <a href="index.html">🚪 Logout</a>
+    </nav>
+
+  </aside>
+
+  <main class="main">
+
+    <h1>Visitor Login</h1>
+    <p class="subtitle">Enter your details to continue.</p>
+
+    <div class="visitor-box">
+
+      <form id="visitorForm">
+
+        <label for="visitorName">Name</label>
+        <input
+          type="text"
+          id="visitorName"
+          placeholder="Enter your name"
+          required
+        >
+
+        <label for="visitorEmail">Email</label>
+        <input
+          type="email"
+          id="visitorEmail"
+          placeholder="Enter your email"
+          required
+        >
+
+        <button type="submit">Continue</button>
+
+        <p id="message">Welcome to Pavan Educator!</p>
+
+      </form>
+
+    </div>
+
+  </main>
+
+  <script>
+    document.getElementById("visitorForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      document.getElementById("message").style.display = "block";
+    });
+  </script>
+
+</body>
+</html>
