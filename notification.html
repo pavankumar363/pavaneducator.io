@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pavan Educator - Notifications</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f2f5f9;
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 240px;
+      height: 100vh;
+      background: #1e3a8a;
+      color: white;
+      padding: 25px 15px;
+    }
+
+    .logo {
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 35px;
+    }
+
+    .menu a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      padding: 14px 15px;
+      margin-bottom: 8px;
+      border-radius: 8px;
+    }
+
+    .menu a:hover,
+    .menu a.active {
+      background: #172554;
+    }
+
+    .main {
+      margin-left: 240px;
+      padding: 35px;
+    }
+
+    h1 {
+      color: #1e3a8a;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    .notification {
+      background: white;
+      padding: 20px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+    }
+
+    .notification h2 {
+      font-size: 18px;
+      color: #1e3a8a;
+      margin-bottom: 8px;
+    }
+
+    .notification p {
+      color: #666;
+      line-height: 1.5;
+    }
+
+    .date {
+      display: block;
+      margin-top: 8px;
+      font-size: 13px;
+      color: #999;
+    }
+
+    @media (max-width: 600px) {
+      .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+      }
+
+      .main {
+        margin-left: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <aside class="sidebar">
+
+    <div class="logo">
+      Pavan Educator
+    </div>
+
+    <nav class="menu">
+      <a href="dashboard.html">🏠 Dashboard</a>
+      <a href="projects.html">📁 My Projects</a>
+      <a href="notifications.html" class="active">🔔 Notifications</a>
+      <a href="profile.html">👤 Profile</a>
+      <a href="visitor-login.html">👥 Visitor Login</a>
+      <a href="index.html">🚪 Logout</a>
+    </nav>
+
+  </aside>
+
+  <main class="main">
+
+    <h1>Notifications</h1>
+    <p class="subtitle">Your latest updates and announcements.</p>
+
+    <div class="notification">
+      <h2>📢 Welcome to Pavan Educator</h2>
+      <p>Your account has been successfully created.</p>
+      <span class="date">Today</span>
+    </div>
+
+    <div class="notification">
+      <h2>📚 New Project Available</h2>
+      <p>A new educational project has been added to your projects section.</p>
+      <span class="date">Recently</span>
+    </div>
+
+    <div class="notification">
+      <h2>🎓 Keep Learning</h2>
+      <p>Keep working on your projects and continue learning.</p>
+      <span class="date">Recently</span>
+    </div>
+
+  </main>
+
+</body>
+</html>
