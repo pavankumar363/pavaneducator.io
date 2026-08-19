@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pavan Educator - Blog</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f5f9ff;
+      color: #10203d;
+    }
+
+    header {
+      height: 85px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 6%;
+      background: white;
+      border-bottom: 1px solid #e5edf8;
+    }
+
+    .brand {
+      font-size: 28px;
+      font-weight: 800;
+    }
+
+    .brand span {
+      color: #1463e8;
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #10203d;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #1463e8;
+    }
+
+    .login-btn {
+      background: #1463e8;
+      color: white !important;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .container {
+      width: 88%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 55px 0;
+    }
+
+    .heading {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .heading h1 {
+      font-size: 48px;
+      margin-bottom: 12px;
+    }
+
+    .heading h1 span {
+      color: #1463e8;
+    }
+
+    .heading p {
+      color: #66758f;
+      font-size: 18px;
+    }
+
+    .posts {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .post {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(16, 32, 61, 0.08);
+    }
+
+    .post-image {
+      height: 170px;
+      background: #e7f0ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 60px;
+    }
+
+    .post-content {
+      padding: 25px;
+    }
+
+    .category {
+      color: #1463e8;
+      font-size: 13px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .post h2 {
+      margin: 10px 0;
+      font-size: 21px;
+    }
+
+    .post p {
+      color: #66758f;
+      line-height: 1.6;
+    }
+
+    .read-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 18px;
+      background: #1463e8;
+      color: white;
+      text-decoration: none;
+      border-radius: 7px;
+    }
+
+    @media (max-width: 900px) {
+      nav {
+        display: none;
+      }
+
+      .posts {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .posts {
+        grid-template-columns: 1fr;
+      }
+
+      .heading h1 {
+        font-size: 38px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+
+  <div class="brand">
+    Pavan<span>Educator</span>
+  </div>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="courses.html">Courses</a>
+    <a href="tutorials.html">Tutorials</a>
+    <a href="projects.html">Projects</a>
+    <a href="blog.html" class="active">Blog</a>
+    <a href="#">About Me</a>
+    <a href="#">Contact</a>
+    <a href="login.html" class="login-btn">🎓 Get Started</a>
+  </nav>
+
+</header>
+
+<main class="container">
+
+  <section class="heading">
+    <h1>Latest <span>Articles</span></h1>
+    <p>Ideas, tips and knowledge to help you learn and grow.</p>
+  </section>
+
+  <section class="posts">
+
+    <article class="post">
+      <div class="post-image">💻</div>
+      <div class="post-content">
+        <span class="category">Programming</span>
+        <h2>How to Start Learning Programming</h2>
+        <p>
+          A simple guide for beginners who want to start their programming journey.
+        </p>
+        <a href="#" class="read-btn">Read Article</a>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="post-image">🌐</div>
+      <div class="post-content">
+        <span class="category">Web Development</span>
+        <h2>How Websites Actually Work</h2>
+        <p>
+          Understand the basics of browsers, servers, HTML, CSS and JavaScript.
+        </p>
+        <a href="#" class="read-btn">Read Article</a>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="post-image">🎓</div>
+      <div class="post-content">
+        <span class="category">Education</span>
+        <h2>How to Study More Effectively</h2>
+        <p>
+          Practical ideas to help you organize your learning and stay consistent.
+        </p>
+        <a href="#" class="read-btn">Read Article</a>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="post-image">🤖</div>
+      <div class="post-content">
+        <span class="category">Technology</span>
+        <h2>Understanding Artificial Intelligence</h2>
+        <p>
+          A beginner-friendly introduction to AI and how intelligent systems work.
+        </p>
+        <a href="#" class="read-btn">Read Article</a>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="post-image">🚀</div>
+      <div class="post-content">
+        <span class="category">Career</span>
+        <h2>Building Your Technology Career</h2>
+        <p>
+          Important skills and habits that can help you prepare for a career in technology.
+        </p>
+        <a href="#" class="read-btn">Read Article</a>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="post-image">🧠</div>
+      <div class="post-content">
+        <span class="category">Learning</span>
+        <h2>The Power of Continuous Learning</h2>
+        <p>
+          Why learning consistently can make a big difference over time.
+        </p>
+        <a href="#" class="read-btn">Read Article</a>
+      </div>
+    </article>
+
+  </section>
+
+</main>
+
+</body>
+</html>
