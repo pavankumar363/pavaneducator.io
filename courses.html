@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Courses - PavanEducator</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f5f9ff;
+      color: #10203d;
+    }
+
+    header {
+      height: 82px;
+      padding: 0 6%;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #e5edf8;
+    }
+
+    .brand {
+      font-size: 28px;
+      font-weight: 800;
+    }
+
+    .brand span {
+      color: #1463e8;
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #10203d;
+      font-weight: 600;
+    }
+
+    nav a:hover,
+    nav .active {
+      color: #1463e8;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 75px 20px 45px;
+      background: linear-gradient(135deg, #f7fbff, #eaf3ff);
+    }
+
+    .hero h1 {
+      font-size: 55px;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 span {
+      color: #1463e8;
+    }
+
+    .hero p {
+      color: #65748b;
+      font-size: 18px;
+    }
+
+    .courses {
+      max-width: 1200px;
+      margin: 50px auto;
+      padding: 0 25px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .course {
+      background: white;
+      padding: 30px;
+      border-radius: 18px;
+      border: 1px solid #e3ebf7;
+      box-shadow: 0 10px 30px rgba(20, 99, 232, 0.08);
+      transition: 0.25s;
+    }
+
+    .course:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 18px 40px rgba(20, 99, 232, 0.15);
+    }
+
+    .icon {
+      font-size: 42px;
+      margin-bottom: 18px;
+    }
+
+    .course h2 {
+      margin-bottom: 12px;
+    }
+
+    .course p {
+      color: #68778e;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .course a {
+      display: inline-block;
+      background: #1463e8;
+      color: white;
+      text-decoration: none;
+      padding: 11px 18px;
+      border-radius: 8px;
+      font-weight: 700;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #10203d;
+      color: white;
+      margin-top: 70px;
+    }
+
+    footer span {
+      color: #5d9cff;
+    }
+
+    @media (max-width: 800px) {
+      nav {
+        display: none;
+      }
+
+      .courses {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="brand">
+    Pavan<span>Educator</span>
+  </div>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="courses.html" class="active">Courses</a>
+    <a href="tutorials.html">Tutorials</a>
+    <a href="projects.html">Projects</a>
+    <a href="blog.html">Blog</a>
+    <a href="about.html">About Me</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Explore <span>Courses</span></h1>
+  <p>Learn practical skills and build your knowledge step by step.</p>
+</section>
+
+<section class="courses">
+
+  <div class="course">
+    <div class="icon">💻</div>
+    <h2>Computer Science</h2>
+    <p>Learn important computer science concepts in a simple and practical way.</p>
+    <a href="#">Start Learning</a>
+  </div>
+
+  <div class="course">
+    <div class="icon">⌨️</div>
+    <h2>Programming</h2>
+    <p>Improve your programming skills through examples, exercises and projects.</p>
+    <a href="#">Start Learning</a>
+  </div>
+
+  <div class="course">
+    <div class="icon">🌐</div>
+    <h2>Web Development</h2>
+    <p>Learn HTML, CSS and JavaScript and create your own websites.</p>
+    <a href="#">Start Learning</a>
+  </div>
+
+  <div class="course">
+    <div class="icon">🐍</div>
+    <h2>Python</h2>
+    <p>Start learning Python programming from the basics to practical projects.</p>
+    <a href="#">Start Learning</a>
+  </div>
+
+  <div class="course">
+    <div class="icon">🗄️</div>
+    <h2>Database</h2>
+    <p>Understand databases, SQL and how applications store information.</p>
+    <a href="#">Start Learning</a>
+  </div>
+
+  <div class="course">
+    <div class="icon">🚀</div>
+    <h2>Projects</h2>
+    <p>Build real-world projects that you can use in your portfolio.</p>
+    <a href="projects.html">View Projects</a>
+  </div>
+
+</section>
+
+<footer>
+  © 2026 <span>PavanEducator</span>. All rights reserved.
+</footer>
+
+</body>
+</html>
