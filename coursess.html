@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Course - PavanEducator</title>
+
+<style>
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f5f9ff;
+  color: #10203d;
+}
+
+header {
+  height: 82px;
+  background: white;
+  border-bottom: 1px solid #e5edf8;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6%;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.logo span {
+  color: #1463e8;
+}
+
+nav {
+  display: flex;
+  gap: 28px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #10203d;
+  font-weight: 600;
+}
+
+nav a:hover {
+  color: #1463e8;
+}
+
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #f7fbff, #e8f2ff);
+}
+
+.hero .icon {
+  font-size: 65px;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: 55px;
+  margin-bottom: 18px;
+}
+
+.hero h1 span {
+  color: #1463e8;
+}
+
+.hero p {
+  color: #65748b;
+  font-size: 19px;
+}
+
+.content {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 0 25px;
+}
+
+.card {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 35px rgba(20,99,232,0.09);
+  margin-bottom: 25px;
+}
+
+.card h2 {
+  color: #1463e8;
+  margin-bottom: 15px;
+}
+
+.card p {
+  color: #65748b;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+.topics {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.topic {
+  padding: 18px;
+  background: #f4f8ff;
+  border-radius: 12px;
+  border: 1px solid #e1ebfa;
+  font-weight: 600;
+}
+
+.back {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 13px 22px;
+  background: #1463e8;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+footer {
+  margin-top: 70px;
+  padding: 30px;
+  background: #10203d;
+  color: white;
+  text-align: center;
+}
+
+footer span {
+  color: #5d9cff;
+}
+
+@media(max-width:700px) {
+
+  nav {
+    display: none;
+  }
+
+  .hero h1 {
+    font-size: 40px;
+  }
+
+  .topics {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 25px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+  <div class="logo">
+    Pavan<span>Educator</span>
+  </div>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="courses.html">Courses</a>
+    <a href="tutorials.html">Tutorials</a>
+    <a href="projects.html">Projects</a>
+    <a href="blog.html">Blog</a>
+    <a href="about.html">About Me</a>
+  </nav>
+
+</header>
+
+
+<section class="hero">
+
+  <div class="icon" id="courseIcon">💻</div>
+
+  <h1>
+    <span id="courseTitle">Course</span>
+  </h1>
+
+  <p id="courseDescription">
+    Learn practical skills step by step.
+  </p>
+
+</section>
+
+
+<section class="content">
+
+  <div class="card">
+
+    <h2>About This Course</h2>
+
+    <p id="courseAbout">
+      Welcome to this course.
+    </p>
+
+  </div>
+
+
+  <div class="card">
+
+    <h2>What You Will Learn</h2>
+
+    <div class="topics" id="topics"></div>
+
+  </div>
+
+
+  <div class="card">
+
+    <h2>Course Projects</h2>
+
+    <p id="projects">
+      You will build practical projects while learning.
+    </p>
+
+  </div>
+
+
+  <a href="courses.html" class="back">
+    ← Back to Courses
+  </a>
+
+</section>
+
+
+<footer>
+  © 2026 <span>PavanEducator</span>. All rights reserved.
+</footer>
+
+
+<script>
+
+const courses = {
+
+  "computer-science": {
+    title: "Computer Science",
+    icon: "💻",
+    description: "Learn the fundamentals of Computer Science.",
+    about: "Understand the core concepts of computers, algorithms, data structures and problem solving.",
+    topics: [
+      "Computer Fundamentals",
+      "Algorithms",
+      "Data Structures",
+      "Operating Systems",
+      "Computer Networks",
+      "Problem Solving"
+    ],
+    projects: "Build small programs and practical Computer Science projects."
+  },
+
+  "programming": {
+    title: "Programming",
+    icon: "⌨️",
+    description: "Improve your programming skills through practice.",
+    about: "Learn programming concepts from the basics and develop your ability to solve real problems using code.",
+    topics: [
+      "Variables",
+      "Conditions",
+      "Loops",
+      "Functions",
+      "Arrays",
+      "Problem Solving"
+    ],
+    projects: "Create coding exercises and real-world programming projects."
+  },
+
+  "web-development": {
+    title: "Web Development",
+    icon: "🌐",
+    description: "Learn how to create modern websites.",
+    about: "Learn HTML, CSS and JavaScript and use them together to build responsive websites.",
+    topics: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Responsive Design",
+      "Web Forms",
+      "Website Projects"
+    ],
+    projects: "Build your own responsive websites and portfolio projects."
+  },
+
+  "python": {
+    title: "Python",
+    icon: "🐍",
+    description: "Learn Python from beginner to practical projects.",
+    about: "Start Python programming from the basics and gradually move toward practical applications.",
+    topics: [
+      "Python Basics",
+      "Variables",
+      "Loops",
+      "Functions",
+      "Lists",
+      "Projects"
+    ],
+    projects: "Create Python programs, automation tools and beginner projects."
+  },
+
+  "database": {
+    title: "Database",
+    icon: "🗄️",
+    description: "Learn databases and SQL.",
+    about: "Understand how applications store, organize and retrieve information using databases.",
+    topics: [
+      "Database Basics",
+      "Tables",
+      "SQL",
+      "Queries",
+      "Relationships",
+      "Database Projects"
+    ],
+    projects: "Create databases and practice SQL with real examples."
+  }
+
+};
+
+
+const params = new URLSearchParams(window.location.search);
+
+const courseName = params.get("course");
+
+const course = courses[courseName];
+
+
+if (course) {
+
+  document.title = course.title + " - PavanEducator";
+
+  document.getElementById("courseIcon").textContent = course.icon;
+
+  document.getElementById("courseTitle").textContent = course.title;
+
+  document.getElementById("courseDescription").textContent =
+    course.description;
+
+  document.getElementById("courseAbout").textContent =
+    course.about;
+
+  document.getElementById("projects").textContent =
+    course.projects;
+
+  const topics = document.getElementById("topics");
+
+  course.topics.forEach(function(topic) {
+
+    const div = document.createElement("div");
+
+    div.className = "topic";
+
+    div.textContent = "✓ " + topic;
+
+    topics.appendChild(div);
+
+  });
+
+}
+
+</script>
+
+</body>
+</html>
