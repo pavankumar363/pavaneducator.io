@@ -1,242 +1,398 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pavan Educator - About Me</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
+<title>About Me - PavanEducator</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f4f8ff;
+    color: #10203d;
+}
+
+/* NAVIGATION */
+header {
+    height: 82px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 6%;
+    border-bottom: 1px solid #e5edf8;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.logo span {
+    color: #1765e8;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #10203d;
+    font-weight: 600;
+    padding: 30px 0;
+}
+
+nav a:hover,
+nav a.active {
+    color: #1765e8;
+}
+
+/* MAIN */
+.about-container {
+    max-width: 1350px;
+    margin: 45px auto;
+    padding: 45px;
+    background: white;
+    border-radius: 28px;
+    box-shadow: 0 15px 45px rgba(20, 99, 232, 0.08);
+
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    gap: 55px;
+}
+
+/* PHOTO */
+.profile-section {
+    text-align: center;
+}
+
+.profile-photo {
+    width: 100%;
+    height: 430px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 22px;
+    display: block;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+
+/* PERSONAL DETAILS */
+.details {
+    margin-top: 25px;
+    text-align: left;
+}
+
+.detail {
+    padding: 16px 5px;
+    border-bottom: 1px solid #e3eaf5;
+}
+
+.detail-title {
+    color: #68778e;
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.detail-value {
+    font-size: 17px;
+    font-weight: 700;
+}
+
+/* CONTENT */
+.content h1 {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.content h1 span {
+    color: #1765e8;
+}
+
+.blue-line {
+    width: 90px;
+    height: 5px;
+    background: #1765e8;
+    margin-bottom: 30px;
+    border-radius: 5px;
+}
+
+.content h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.content p {
+    font-size: 18px;
+    color: #60708a;
+    line-height: 1.8;
+    margin-bottom: 22px;
+}
+
+/* CARDS */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-top: 35px;
+}
+
+.card {
+    background: #f4f8ff;
+    padding: 25px 18px;
+    border-radius: 18px;
+    text-align: center;
+    min-height: 230px;
+    border: 1px solid #e2eafa;
+}
+
+.card-icon {
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 18px;
+    border-radius: 50%;
+    background: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 32px;
+}
+
+.card h3 {
+    color: #1765e8;
+    font-size: 19px;
+    margin-bottom: 15px;
+}
+
+.card p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* FOOTER */
+footer {
+    margin-top: 70px;
+    padding: 30px;
+    text-align: center;
+    background: #10203d;
+    color: white;
+}
+
+footer span {
+    color: #5d9cff;
+}
+
+/* MOBILE */
+@media (max-width: 950px) {
+
+    .about-container {
+        grid-template-columns: 1fr;
+        padding: 25px;
     }
 
-    body {
-      background: #f5f9ff;
-      color: #10203d;
+    .profile-section {
+        max-width: 400px;
+        margin: auto;
     }
 
-    header {
-      height: 85px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 6%;
-      background: white;
-      border-bottom: 1px solid #e5edf8;
-    }
-
-    .brand {
-      font-size: 28px;
-      font-weight: 800;
-    }
-
-    .brand span {
-      color: #1463e8;
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     nav {
-      display: flex;
-      gap: 28px;
-      align-items: center;
+        display: none;
     }
+}
 
-    nav a {
-      text-decoration: none;
-      color: #10203d;
-    }
-
-    nav a:hover,
-    nav a.active {
-      color: #1463e8;
-    }
-
-    .login-btn {
-      background: #1463e8;
-      color: white !important;
-      padding: 12px 20px;
-      border-radius: 8px;
-      font-weight: bold;
-    }
-
-    .container {
-      width: 88%;
-      max-width: 1100px;
-      margin: auto;
-      padding: 65px 0;
-    }
-
-    .about {
-      display: grid;
-      grid-template-columns: 350px 1fr;
-      gap: 60px;
-      align-items: center;
-      background: white;
-      padding: 45px;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(16, 32, 61, 0.08);
-    }
-
-    .photo {
-      width: 300px;
-      height: 360px;
-      border-radius: 20px;
-      background: linear-gradient(135deg, #dceaff, #eef5ff);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #1463e8;
-      font-weight: bold;
-      text-align: center;
-      margin: auto;
-    }
+@media (max-width: 550px) {
 
     .content h1 {
-      font-size: 48px;
-      margin-bottom: 10px;
+        font-size: 42px;
     }
 
-    .content h1 span {
-      color: #1463e8;
-    }
-
-    .line {
-      width: 70px;
-      height: 4px;
-      background: #1463e8;
-      margin: 20px 0;
-    }
-
-    .content h2 {
-      margin-bottom: 15px;
-    }
-
-    .content p {
-      color: #66758f;
-      line-height: 1.8;
-      margin-bottom: 18px;
-    }
-
-    .values {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 15px;
-      margin-top: 30px;
-    }
-
-    .value {
-      background: #f5f9ff;
-      padding: 20px;
-      border-radius: 12px;
-    }
-
-    .value h3 {
-      color: #1463e8;
-      margin-bottom: 8px;
-    }
-
-    .value p {
-      font-size: 14px;
-      margin: 0;
-    }
-
-    @media (max-width: 900px) {
-      nav {
-        display: none;
-      }
-
-      .about {
+    .cards {
         grid-template-columns: 1fr;
-        text-align: center;
-      }
-
-      .line {
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .values {
-        grid-template-columns: 1fr;
-        text-align: left;
-      }
     }
-  </style>
+
+    .about-container {
+        margin: 20px;
+        padding: 20px;
+    }
+}
+</style>
 </head>
 
 <body>
 
+<!-- NAVIGATION -->
 <header>
 
-  <div class="brand">
-    Pavan<span>Educator</span>
-  </div>
+    <div class="logo">
+        Pavan<span>Educator</span>
+    </div>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="courses.html">Courses</a>
-    <a href="tutorials.html">Tutorials</a>
-    <a href="projects.html">Projects</a>
-    <a href="blog.html">Blog</a>
-    <a href="about.html" class="active">About Me</a>
-    <a href="#">Contact</a>
-    <a href="login.html" class="login-btn">🎓 Get Started</a>
-  </nav>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="courses.html">Courses</a>
+        <a href="tutorials.html">Tutorials</a>
+        <a href="projects.html">Projects</a>
+        <a href="blog.html">Blog</a>
+        <a href="about.html" class="active">About Me</a>
+        <a href="contact.html">Contact</a>
+    </nav>
 
 </header>
 
-<main class="container">
 
-  <section class="about">
+<!-- ABOUT SECTION -->
+<section class="about-container">
 
-    <div class="photo">
-      Your Photo<br>
-      Will Go Here
+    <!-- LEFT SIDE -->
+    <div class="profile-section">
+
+        <img
+            src="about-photo.png"
+            alt="Pavan Kumar"
+            class="profile-photo"
+        >
+
+        <div class="details">
+
+            <div class="detail">
+                <div class="detail-title">Name</div>
+                <div class="detail-value">Pavan Kumar</div>
+            </div>
+
+            <div class="detail">
+                <div class="detail-title">Class</div>
+                <div class="detail-value">9th</div>
+            </div>
+
+            <div class="detail">
+                <div class="detail-title">Interests</div>
+                <div class="detail-value">Technology, AI</div>
+            </div>
+
+            <div class="detail">
+                <div class="detail-title">Skills</div>
+                <div class="detail-value">Reading Books, Learning New Things</div>
+            </div>
+
+            <div class="detail">
+                <div class="detail-title">Goal</div>
+                <div class="detail-value">Become a Doctor</div>
+            </div>
+
+        </div>
+
     </div>
 
+
+    <!-- RIGHT SIDE -->
     <div class="content">
 
-      <h1>About <span>Me</span></h1>
+        <h1>About <span>Me</span></h1>
 
-      <div class="line"></div>
+        <div class="blue-line"></div>
 
-      <h2>Welcome to Pavan Educator</h2>
+        <h2>Welcome to Pavan Educator</h2>
 
-      <p>
-        I'm passionate about education, technology and helping students
-        develop practical skills for the future.
-      </p>
+        <p>
+            Hi! I'm Pavan Kumar, a 9th class student with a strong
+            curiosity for learning and a passion for technology and AI.
+        </p>
 
-      <p>
-        Pavan Educator is a learning platform created to make technology
-        education simple, practical and accessible.
-      </p>
+        <p>
+            I enjoy reading books, discovering new things and exploring
+            ideas that help me improve my knowledge every day.
+        </p>
 
-      <div class="values">
+        <p>
+            Pavan Educator is a platform where I can share what I learn
+            and make education simple, practical and useful for others.
+        </p>
 
-        <div class="value">
-          <h3>🎓 Learn</h3>
-          <p>Build strong knowledge through simple explanations.</p>
+
+        <!-- CARDS -->
+        <div class="cards">
+
+            <div class="card">
+
+                <div class="card-icon">📚</div>
+
+                <h3>Books Reading</h3>
+
+                <p>
+                    I enjoy reading books that inspire me
+                    and help me learn new things.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">💡</div>
+
+                <h3>Learning</h3>
+
+                <p>
+                    I love discovering new ideas and
+                    increasing my knowledge every day.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">💻</div>
+
+                <h3>Technology & AI</h3>
+
+                <p>
+                    I am interested in technology and AI
+                    and enjoy learning how they work.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">🩺</div>
+
+                <h3>My Goal</h3>
+
+                <p>
+                    My dream is to become a doctor
+                    and serve people in the future.
+                </p>
+
+            </div>
+
         </div>
-
-        <div class="value">
-          <h3>💡 Practice</h3>
-          <p>Turn knowledge into real-world skills.</p>
-        </div>
-
-        <div class="value">
-          <h3>🚀 Grow</h3>
-          <p>Keep learning and prepare for your future.</p>
-        </div>
-
-      </div>
 
     </div>
 
-  </section>
+</section>
 
-</main>
+
+<footer>
+    © 2026 <span>PavanEducator</span>. All rights reserved.
+</footer>
+
 
 </body>
 </html>
