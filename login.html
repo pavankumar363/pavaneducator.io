@@ -22,7 +22,7 @@
     }
 
     .login-box {
-      width: 350px;
+      width: 370px;
       padding: 35px;
       background: white;
       border-radius: 15px;
@@ -71,12 +71,32 @@
       background: #172554;
     }
 
-    #error {
+    .switch {
+      text-align: center;
+      margin-top: 18px;
+      color: #555;
+    }
+
+    .switch a {
+      color: #1e3a8a;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .message {
       display: none;
       margin-top: 15px;
       text-align: center;
-      color: #dc2626;
       font-weight: bold;
+    }
+
+    .error {
+      color: #dc2626;
+    }
+
+    .success {
+      color: #16a34a;
     }
   </style>
 </head>
@@ -84,51 +104,232 @@
 <body>
 
   <div class="login-box">
-    <h1>Pavan Educator</h1>
-    <p class="subtitle">Student Login</p>
 
+    <h1>Pavan Educator</h1>
+
+    <p class="subtitle" id="formTitle">Student Login</p>
+
+    <!-- LOGIN FORM -->
     <form id="loginForm">
 
-      <label for="username">Username</label>
+      <label for="loginEmail">Email</label>
       <input
-        type="text"
-        id="username"
-        placeholder="Enter username"
+        type="email"
+        id="loginEmail"
+        placeholder="Enter your email"
         required
       >
 
-      <label for="password">Password</label>
+      <label for="loginPassword">Password</label>
       <input
         type="password"
-        id="password"
-        placeholder="Enter password"
+        id="loginPassword"
+        placeholder="Enter your password"
         required
       >
 
       <button type="submit">Login</button>
 
-      <p id="error">Invalid username or password</p>
+      <p class="switch">
+        Don't have an account?
+        <a id="showSignup">Create Account</a>
+      </p>
+
+      <p id="loginMessage" class="message error"></p>
 
     </form>
+
+
+    <!-- SIGN UP FORM -->
+    <form id="signupForm" style="display:none;">
+
+      <label for="signupEmail">Email</label>
+      <input
+        type="email"
+        id="signupEmail"
+        placeholder="Enter your email"
+        required
+      >
+
+      <label for="signupPassword">Password</label>
+      <input
+        type="password"
+        id="signupPassword"
+        placeholder="Create a password"
+        minlength="6"
+        required
+      >
+
+      <button type="submit">Create Account</button>
+
+      <p class="switch">
+        Already have an account?
+        <a id="showLogin">Login</a>
+      </p>
+
+      <p id="signupMessage" class="message"></p>
+
+    </form>
+
   </div>
 
-  <script>
-    const correctUsername = "educator";
-    const correctPassword = "pavan";
 
-    document.getElementById("loginForm").addEventListener("submit", function(event) {
+  <!-- SUPABASE -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <script>
+
+    // YOUR SUPABASE PROJECT
+    const SUPABASE_URL =
+      "https://mkqgingyvqnrhngediyt.supabase.co";
+
+    // PASTE YOUR SUPABASE PUBLISHABLE KEY BETWEEN THE QUOTES
+    const SUPABASE_PUBLISHABLE_KEY =
+      "sb_publishable_XcpTSrNn3CAfaEj-AoOHmw_kjciLd7Z";
+
+    const supabaseClient = window.supabase.createClient(
+      SUPABASE_URL,
+      SUPABASE_PUBLISHABLE_KEY
+    );
+
+
+    // GET ELEMENTS
+    const loginForm = document.getElementById("loginForm");
+    const signupForm = document.getElementById("signupForm");
+
+    const showSignup = document.getElementById("showSignup");
+    const showLogin = document.getElementById("showLogin");
+
+    const formTitle = document.getElementById("formTitle");
+
+    const loginMessage = document.getElementById("loginMessage");
+    const signupMessage = document.getElementById("signupMessage");
+
+
+    // SHOW SIGNUP
+    showSignup.addEventListener("click", function() {
+
+      loginForm.style.display = "none";
+      signupForm.style.display = "block";
+
+      formTitle.textContent = "Create Your Account";
+
+      loginMessage.style.display = "none";
+      signupMessage.style.display = "none";
+
+    });
+
+
+    // SHOW LOGIN
+    showLogin.addEventListener("click", function() {
+
+      signupForm.style.display = "none";
+      loginForm.style.display = "block";
+
+      formTitle.textContent = "Student Login";
+
+      loginMessage.style.display = "none";
+      signupMessage.style.display = "none";
+
+    });
+
+
+    // CREATE ACCOUNT
+    signupForm.addEventListener("submit", async function(event) {
+
       event.preventDefault();
 
-      const username = document.getElementById("username").value;
-      const password = document.getElementById("password").value;
-      const error = document.getElementById("error");
+      const email =
+        document.getElementById("signupEmail").value.trim();
 
-      if (username === correctUsername && password === correctPassword) {
-        window.location.href = "dashboard.html";
-      } else {
-        error.style.display = "block";
+      const password =
+        document.getElementById("signupPassword").value;
+
+      signupMessage.className = "message";
+      signupMessage.style.display = "block";
+      signupMessage.textContent = "Creating your account...";
+
+      const { data, error } =
+        await supabaseClient.auth.signUp({
+          email: email,
+          password: password
+        });
+
+
+      if (error) {
+
+        signupMessage.className = "message error";
+        signupMessage.textContent = error.message;
+
+        return;
       }
+
+
+      signupMessage.className = "message success";
+
+      if (data.session) {
+
+        signupMessage.textContent =
+          "Account created! Opening dashboard...";
+
+        setTimeout(function() {
+          window.location.href = "dashboard.html";
+        }, 1000);
+
+      } else {
+
+        signupMessage.textContent =
+          "Account created! Please check your email to confirm your account.";
+
+      }
+
     });
+
+
+    // LOGIN
+    loginForm.addEventListener("submit", async function(event) {
+
+      event.preventDefault();
+
+      const email =
+        document.getElementById("loginEmail").value.trim();
+
+      const password =
+        document.getElementById("loginPassword").value;
+
+      loginMessage.className = "message";
+      loginMessage.style.display = "block";
+      loginMessage.textContent = "Logging in...";
+
+
+      const { data, error } =
+        await supabaseClient.auth.signInWithPassword({
+          email: email,
+          password: password
+        });
+
+
+      if (error) {
+
+        loginMessage.className = "message error";
+        loginMessage.textContent =
+          "Login failed: " + error.message;
+
+        return;
+      }
+
+
+      loginMessage.className = "message success";
+      loginMessage.textContent =
+        "Login successful! Opening dashboard...";
+
+
+      setTimeout(function() {
+        window.location.href = "dashboard.html";
+      }, 700);
+
+    });
+
   </script>
 
 </body>
